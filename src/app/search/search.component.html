@@ -1,0 +1,50 @@
+<div class="search-container">
+    <div class="key-value-container">
+        <div class="key">
+            Category
+        </div>
+        <div class="value">
+            <input type="text" [(ngModel)]="searchCriteria.Category" (input)="search()" />
+        </div>
+    </div>
+    <div class="key-value-container">
+        <div class="key">
+            Start Date
+        </div>
+        <div class="value">
+            <input type="text" (change)="setStartDate($event.target.value)" />
+        </div>
+    </div>
+    <div class="key-value-container">
+        <div class="key">
+            End Date
+        </div>
+        <div class="value">
+            <input type="text" (change)="setEndDate($event.target.value)" />
+        </div>
+    </div>
+    <div class="key-value-container">
+        <div class="key">
+            City
+        </div>
+        <div class="value">
+            <input type="text" [(ngModel)]="searchCriteria.City" (input)="search()" />
+        </div>
+    </div>
+    <div class="key-value-container">
+        <div class="key">
+            Venue
+        </div>
+        <div class="value">
+            <input type="text" [(ngModel)]="searchCriteria.Venue" (input)="search()" />
+        </div>
+    </div>
+    <div class="key-value-container">
+        <div class="key">
+            Keyword
+        </div>
+        <div class="value">
+            <input type="text" [(ngModel)]="searchCriteria.Keyword" (input)="search()" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="results-container">
+    <div *ngFor="let event of events" class="event-container" (click)="eventClick(event)">
+        <div class="key-value-container">
+            <strong>Category</strong><br />
+            {{ event.Category }}
+        </div>
+        <div class="key-value-container">
+            <strong>Start Date</strong><br />
+            {{ event.StartDate }}
+        </div>
+        <div class="key-value-container">
+            <strong>End Date</strong><br />
+            {{ event.EndDate }}
+        </div>
+        <div class="key-value-container">
+            <strong>City</strong><br />
+            {{ event.City }}
+        </div>
+        <div class="key-value-container">
+            <strong>Venue</strong><br />
+            {{ event.Venue }}
+        </div>
+    </div>  
+</div>

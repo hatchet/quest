@@ -1,0 +1,13 @@
+<div class="link-container">
+    <a [routerLink]="''">back</a>
+</div>
+<div class="event-container">
+    <div *ngFor="let event of selectedEventKeyValues" class="key-value-container">
+        <div class="key">
+            <strong>{{event.key}}</strong>
+        </div>
+        <div class="value">
+            {{event.value}}
+        </div>
+    </div>
+</div>
