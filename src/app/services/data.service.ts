@@ -1512,7 +1512,7 @@ export class DataService {
         "Region": "Southwest",
         "Category": "Music/Theater",
         "StartDate": "2/16/2020",
-        "EndDate": "2/16/14",
+        "EndDate": "2/16/2020",
         "Title": "Pianopalooza IX",
         "Description": "Celebrate the art of the piano with the ninth installment of this popular concert, showcasing CCM's most spectacular student pianists.",
         "Venue": "Patricia Corbett Theater",
@@ -1526,7 +1526,7 @@ export class DataService {
     {
         "Region": "Southwest",
         "Category": "Music/Theater",
-        "StartDate": "2/27/14",
+        "StartDate": "2/27/2020",
         "EndDate": "3/9/2020",
         "Title": "Les Miserables",
         "Description": "Victor Hugo's saga of one man's lifelong quest for redemption continues to sweep audiences of their feet.",
@@ -2026,15 +2026,15 @@ export class DataService {
 
   public search(searchCriteria: SearchCriteria): void {
     let filteredEvents = this.events.filter(event => {
-      const categoryMatch = searchCriteria.Category ? event.Category.includes(searchCriteria.Category) : true;
+      const categoryMatch = searchCriteria.Category ? event.Category.toLowerCase().includes(searchCriteria.Category.toLowerCase()) : true;
       const startDateMatch = searchCriteria.StartDate ? new Date(event.StartDate) >= searchCriteria.StartDate : true;
       const endDateMatch = searchCriteria.EndDate ? new Date(event.EndDate) <= searchCriteria.EndDate : true;
-      const cityMatch = searchCriteria.City ? event.City.includes(searchCriteria.City) : true;
-      const venueMatch = searchCriteria.Venue ? event.Venue.includes(searchCriteria.Venue) : true;
+      const cityMatch = searchCriteria.City ? event.City.toLowerCase().includes(searchCriteria.City.toLowerCase()) : true;
+      const venueMatch = searchCriteria.Venue ? event.Venue.toLowerCase().includes(searchCriteria.Venue.toLowerCase()) : true;
       let keywordMatch = false;
       if (searchCriteria.Keyword) {
         for (const property in event) {
-          if (event[property].includes(searchCriteria.Keyword)) {
+          if (event[property].toLowerCase().includes(searchCriteria.Keyword.toLowerCase())) {
             keywordMatch = true;
           }
         }
